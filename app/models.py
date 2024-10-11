@@ -92,6 +92,97 @@ class HostingService1(models.Model):
 
 
 
+class CloudMain(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Cloud Main"
+        verbose_name_plural = "Cloud Main"
+
+
+class CloudPlans(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    price = models.CharField(max_length=40, blank=True, null=True)
+    duration = models.CharField(max_length=255)
+    space = models.CharField(max_length=255)
+    transfer = models.CharField(max_length=255)
+    panel = models.CharField(max_length=255)
+    support = models.CharField(max_length=255)
+    type = models.CharField(max_length=255)
+    upgrading = models.CharField(max_length=255)
+    button_name = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Cloud Plan"
+        verbose_name_plural = "Cloud Plans"
+
+
+
+class FeaturesMain(models.Model):
+    tag = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Feutares Main"
+        verbose_name_plural = "Feutares Main"
+
+
+
+class FeaturesBlocks(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="features_blocks", blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Features Blocks"
+        verbose_name_plural = "Features Blocks"
+
+
+
+class Testimonials(models.Model):
+    tag = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Testimonials"
+        verbose_name_plural = "Testimonials"
+
+
+
+class TestimonialsBlocks(models.Model):
+    name= models.CharField(max_length=255)
+    position = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    icon_class = models.CharField(max_length=255, blank=True, null=True)
+   
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Testimonials Blocks"
+        verbose_name_plural = "Testimonials Blocks"
+
+
+
+
 class AboutUs(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
