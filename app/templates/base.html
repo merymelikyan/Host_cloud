@@ -115,13 +115,19 @@ https://templatemo.com/tm-541-host-cloud
         <div class="row">
           <div class="col-md-12">
             <div class="trusted-section-heading">
-              <h4>TRUSTED BY 1,250+ HAPPY CUSTOMERS WORLDWIDE</h4>
+              <h4>{{trusted_main.title}}</h4>
             </div>
           </div>
           <div class="col-md-12">
             <div class="owl-trusted owl-carousel">
-              <div class="trusted-item">
-                <img src="{% static "images/trusted-01.png" %}" alt="trusted 1">
+              {% for t in trusted %}
+                <div class="trusted-item">
+                  <img src="{{t.image.url}}" alt="{{t.title}}">
+                </div>
+              {% endfor %}  
+
+              {% comment %} <div class="trusted-item">
+                <img src="{{{% static "images/trusted-01.png" %}}}" alt="trusted 1">
               </div>
               <div class="trusted-item">
                 <img src="{% static "images/trusted-01.png" %}" alt="trusted 2">
@@ -140,7 +146,7 @@ https://templatemo.com/tm-541-host-cloud
               </div>
               <div class="trusted-item">
                 <img src="{% static "images/trusted-01.png" %}" alt="trusted 7">
-              </div>
+              </div> {% endcomment %}
             </div>
           </div>
         </div>
@@ -155,30 +161,30 @@ https://templatemo.com/tm-541-host-cloud
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <span>Hosting Services</span>
-              <h2>Services we provide</h2>
-              <p>Host Cloud is a professional Bootstrap 4 template by TemplateMo for your hosting company websites. There are 4 HTML pages included in this template. You can feel free to customize anything. Please share this template to your friends. Thank you.</p>
+              <span>{{hosting_main.tag}}</span>
+              <h2>{{hosting_main.title}}</h2>
+              <p>{{hosting_main.description}}</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="service-item">
               <i class="fa fa-database"></i>
-              <h4>10x Light Cloud</h4>
-              <p>Aenean sit amet leo vitae tellus vehicula tincidunt vel sed lorem. Nullam tincidunt commodo magna, id aliquam sapien sollicitudin id.</p>
+              <h4>{{hosting_services.0.title}}</h4>
+              <p>{{hosting_services.0.description}}</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="service-item">
               <i class="fa fa-database"></i>
-              <h4>Managed VPS Cloud</h4>
-              <p>You are not allowed to re-distribute this template as a downloadable ZIP file on any template collection website. Please <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact us</a> if you want to.</p>
+              <h4>{{hosting_service1.title}}</h4>
+              <p>{{hosting_service1.description1}}<a rel="nofollow" href="{{hosting_service1.link_url}}" target="_parent">{{hosting_service1.description2}}</a> {{hosting_service1.description3}}</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="service-item">
               <i class="fa fa-database"></i>
-              <h4>Fully Dedicated</h4>
-              <p>Aenean sit amet leo vitae tellus vehicula tincidunt vel sed lorem. Nullam tincidunt commodo magna, id aliquam sapien sollicitudin id.</p>
+              <h4>{{hosting_services.1.title}}</h4>
+              <p>{{hosting_services.1.description}}</p>
             </div>
           </div>
         </div>
@@ -395,7 +401,7 @@ https://templatemo.com/tm-541-host-cloud
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="footer-item">
               <div class="footer-heading">
-                <h2>Hosting Plans</h2>
+                <h2>{{footer_names.0.title}}</h2>
               </div>
               <ul class="footer-list">
                 {% for name in hosting_plans %}
@@ -414,7 +420,7 @@ https://templatemo.com/tm-541-host-cloud
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="footer-item">
               <div class="footer-heading">
-                <h2>Useful Links</h2>
+                <h2>{{footer_names.2.title}}</h2>
               </div>
               <ul class="footer-list">
                 {% for name in useful_links %}
@@ -432,7 +438,7 @@ https://templatemo.com/tm-541-host-cloud
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="footer-item">
               <div class="footer-heading">
-                <h2>More Information</h2>
+                <h2>{{footer_names.2.title}}</h2>
               </div>
               <ul class="footer-list">
                 {% for name in more_information %}
