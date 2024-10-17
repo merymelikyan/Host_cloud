@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block home_template %}
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+      <div class="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="header-text caption">
+                <h2>Search your domain</h2>
+                <div id="search-section">
+                    <form id="suggestion_form" name="gs" method="get" action="#">
+                  <div class="searchText">
+                    
+                    <input type="text" name="q" class="searchText" placeholder="Enter your domain here..." autocomplete="on">
+                    <ul>
+                      <li><label><input type="checkbox" name="ext_com" value="1"><span>.com <em>($10/yr)</em></span></label></li>
+                      <li><label><input type="checkbox" name="ext_net" value="1"><span>.net <em>($12/yr)</em></span></label></li>
+                      <li><label><input type="checkbox" name="ext_org" value="1"><span>.org <em>($8/yr)</em></span></label></li>
+                      <li><label><input type="checkbox" name="ext_in" value="1"><span>.in <em>($6/yr)</em></span></label></li>
+                    </ul>
+                  </div>
+                      <input type="submit" name="results" class="main-button" value="Search Now">
+                   </form>
+                 <div class="advSearch_chkbox">
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Banner Ends Here -->
+  
+      <!-- Trusted Starts Here -->
+      <div class="trusted-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="trusted-section-heading">
+                <h4>{{trusted_main.title}}</h4>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="owl-trusted owl-carousel">
+                {% for t in trusted %}
+                  <div class="trusted-item">
+                    <img src="{{t.image.url}}" alt="{{t.title}}">
+                  </div>
+                {% endfor %}  
+  
+                {% comment %} <div class="trusted-item">
+                  <img src="{{{% static "images/trusted-01.png" %}}}" alt="trusted 1">
+                </div>
+                <div class="trusted-item">
+                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 2">
+                </div>
+                <div class="trusted-item">
+                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 3">
+                </div>
+                <div class="trusted-item">
+                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 4">
+                </div>
+                <div class="trusted-item">
+                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 5">
+                </div>
+                <div class="trusted-item">
+                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 6">
+                </div>
+                <div class="trusted-item">
+                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 7">
+                </div> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Trusted Ends Here -->
+  
+  
+      <!-- Services Starts Here -->
+      <div class="services-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading">
+                <span>{{hosting_main.tag}}</span>
+                <h2>{{hosting_main.title}}</h2>
+                <p>{{hosting_main.description}}</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="service-item">
+                <i class="fa fa-database"></i>
+                <h4>{{hosting_services.0.title}}</h4>
+                <p>{{hosting_services.0.description}}</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="service-item">
+                <i class="fa fa-database"></i>
+                <h4>{{hosting_service1.title}}</h4>
+                <p>{{hosting_service1.description1}}<a rel="nofollow" href="{{hosting_service1.link_url}}" target="_parent">{{hosting_service1.description2}}</a> {{hosting_service1.description3}}</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="service-item">
+                <i class="fa fa-database"></i>
+                <h4>{{hosting_services.1.title}}</h4>
+                <p>{{hosting_services.1.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Services Ends Here -->
+  
+  
+      <!-- Pricing Starts Here -->
+      <div class="pricing-section">
+        <div class="background-image-pricing">
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="section-heading">
+                <h2>{{cloud_main.title}}</h2>
+                <p>{{cloud_main.description}}</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="pricing-item">
+                <h4>{{cloud_plans.0.title}}</h4>
+                <div class="price">
+                  <h6>{{cloud_plans.0.price}}</h6>
+                  <span>{{cloud_plans.0.duration}}</span>
+                </div>
+                <p>{{cloud_plans.0.description}}</p>
+                <div class="dev"></div>
+                <ul>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.0.space}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.0.transfer}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.0.panel}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.0.support}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.0.type}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.0.upgrading}}</li>
+                </ul>
+                <a href="#" class="main-button">{{cloud_plans.0.button_name}}</a>
+              </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="pricing-item">
+                <h4>{{cloud_plans.1.title}}</h4>
+                <div class="price price-gradient">
+                  <h6>{{cloud_plans.1.price}}</h6>
+                  <span>{{cloud_plans.1.duration}}</span>
+                </div>
+                <p>{{cloud_main.description}}</p>
+                <div class="dev"></div>
+                <ul>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.1.space}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.1.transfer}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.1.panel}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.1.support}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.1.type}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.1.upgrading}}</li>
+                </ul>
+                <a href="#" class="gradient-button">{{cloud_plans.1.button_name}}</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="pricing-item">
+                <h4>{{cloud_plans.2.title}}</h4>
+                <div class="price">
+                  <h6>{{cloud_plans.2.price}}</h6>
+                  <span>{{cloud_plans.2.duration}}</span>
+                </div>
+                <p>{{cloud_main.description}}</p>
+                <div class="dev"></div>
+                <ul>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.2.space}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.2.transfer}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.2.panel}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.2.support}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.2.type}}</li>
+                  <li><i class="fa fa-check"></i>{{cloud_plans.2.upgrading}}</li>
+                </ul>
+                <a href="#" class="main-button">{{cloud_plans.2.button_name}}</a>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      <!-- Pricing Ends Here -->
+  
+  
+      <!-- Features Starts Here -->
+      <div class="features-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading">
+                <span>{{features_main.tag}}</span>
+                <h2>{{features_main.title}}</h2>
+              </div>
+            </div>
+  
+            {% for blocks in features_blocks %}
+              <div class="col-md-6">
+                <div class="feature-item">
+                  <div class="icon">
+                    <img src="{{blocks.image.url}}" alt="">
+                  </div>
+                  <h4>{{blocks.title}}</h4>
+                  <p>{{blocks.description}}</p>
+                </div>
+              </div>
+            {% endfor %}  
+            {% comment %} <div class="col-md-6">
+              <div class="feature-item">
+                <div class="icon">
+                  <img src="{{% static "images/feature-01.png" %}}" alt="">
+                </div>
+                <h4>99.9% Uptime Guaranteed</h4>
+                <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature-item">
+                <div class="icon">
+                  <img src="{{% static "images/feature-01.png" %}}" alt="">
+                </div>
+                <h4>Top Reliability</h4>
+                <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature-item">
+                <div class="icon">
+                  <img src="{{% static "images/feature-01.png" %}}" alt="">
+                </div>
+                <h4>High Security</h4>
+                <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature-item">
+                <div class="icon">
+                  <img src="{{% static "images/feature-01.png" %}}" alt="">
+                </div>
+                <h4>Quality Hardwares</h4>
+                <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature-item">
+                <div class="icon">
+                  <img src="{{% static "images/feature-01.png" %}}" alt="">
+                </div>
+                <h4>Network Solutions</h4>
+                <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
+              </div>
+            </div> {% endcomment %}
+  
+          </div>
+        </div>
+      </div>
+      <!-- Features Ends Here -->
+  
+  
+
+{% endblock %}  

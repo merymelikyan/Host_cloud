@@ -248,3 +248,162 @@ class MoreInformation(models.Model):
         verbose_name_plural = "More Information"
 
 
+class About(models.Model):
+    tag = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return f"{self.tag}"
+
+    class Meta:
+        verbose_name = "About"
+        verbose_name_plural = "About"
+     
+               
+
+
+class Background(models.Model):
+    tag = models.CharField(max_length=55, blank=True, null=True)
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Background"
+        verbose_name_plural = "Background"     
+
+        
+class WorkTabs(models.Model):
+    link_url = models.CharField(max_length=200, blank=True, null=True) 
+    link_name = models.CharField(max_length=255, blank=True, null=True)
+
+
+    def __str__(self):
+        return f"{self.link_name}"
+
+    class Meta:
+        verbose_name = "Work Tabs"
+        verbose_name_plural = "Work Tabs"     
+
+
+class OurWork(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description1 = models.CharField(max_length=255, blank=True, null=True)
+    description2 = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+    class Meta:
+        verbose_name = "Our Work"
+        verbose_name_plural = "Our Work"    
+
+
+class OurTeam(models.Model):
+    tag = models.CharField(max_length=55, blank=True, null=True)
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Our Team"
+        verbose_name_plural = "Our Team"   
+
+
+class Members(models.Model):
+    first_name = models.CharField(max_length=55)
+    last_name = models.CharField(max_length=55)
+    position = models.CharField(max_length=55)
+    img = models.ImageField(upload_to="member")
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} | {self.position}"
+
+    class Meta:
+        verbose_name = "Members"
+        verbose_name_plural = "Members"     
+
+
+class Contact(models.Model):
+    tag = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255)
+    
+    def __str__(self):
+         return f"{self.tag}"
+
+    class Meta:
+        verbose_name = "Contact"
+        verbose_name_plural = "Contact"   
+
+        
+class ContactMain(models.Model):
+    tag = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    
+    def __str__(self):
+        return f"{self.tag}"
+
+    class Meta:
+        verbose_name = "Contact Main"
+        verbose_name_plural = "Contact Main"        
+
+
+class ContactInfo(models.Model):
+    title1 = models.CharField(max_length=255, blank=True, null=True)
+    title2 = models.CharField(max_length=255, blank=True, null=True)
+    html_class1 = models.CharField(max_length=255, blank=True, null=True)
+    html_class2 = models.CharField(max_length=255, blank=True, null=True)
+    html_name1 = models.CharField(max_length=255, blank=True, null=True)
+    html_name2 = models.CharField(max_length=255, blank=True, null=True)
+   
+    
+    def __str__(self):
+        return f"{self.title1} , {self.title2}"
+
+    class Meta:
+        verbose_name = "Contact Info"
+        verbose_name_plural = "Contact Info"
+
+
+class Services(models.Model):
+    tag = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255)
+    
+    def __str__(self):
+         return f"{self.tag}"
+
+    class Meta:
+        verbose_name = "Services"
+        verbose_name_plural = "Services" 
+
+
+        
+class ServicesMain(models.Model):
+    tag = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return f"{self.tag}"
+
+    class Meta:
+        verbose_name = "Services Main"
+        verbose_name_plural = "Services Main"  
+
+
+class ServicesBlocks(models.Model):
+    class_name = models.CharField(max_length=55)
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Services Blocks"
+        verbose_name_plural = "Services Blocks" 

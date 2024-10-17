@@ -18,8 +18,20 @@ from .models import (
     FooterNames,
     HostingPlans,
     UsefulLinks,
-    MoreInformation
-     
+    MoreInformation,
+    About,
+    Background,
+    WorkTabs,
+    OurWork,
+    OurTeam,
+    Members,
+    Contact,
+    ContactMain,
+    ContactInfo,
+    Services,
+    ServicesMain,
+    ServicesBlocks
+
 )    
  
 def index(request):
@@ -45,4 +57,60 @@ def index(request):
           
       }      
 
-    return render(request,"base.html" , context)
+    return render(request,"home.html" , context)
+
+
+def about(request):
+    context = {
+        "about": About.objects.all().first(),
+        "body": About.objects.all(),
+        "background": Background.objects.all().first(),
+        "work_tabs": WorkTabs.objects.all(),
+        "our_work": OurWork.objects.all(),
+        "our_team": OurTeam.objects.all().first(),
+        "members": Members.objects.all(),
+        "testimonials": Testimonials.objects.first(),
+        "testimonials_blocks": TestimonialsBlocks.objects.all(),
+        "footer_text": FooterText.objects.all().first(),
+        "footer_names": FooterNames.objects.all(),
+        "about_us": AboutUs.objects.all().first(),
+        "hosting_plans": HostingPlans.objects.all(),
+        "useful_links": UsefulLinks.objects.all(),
+        "more_information": MoreInformation.objects.all()
+    }
+    return render(request, "about.html", context)
+
+
+def contact(request):
+    context = {
+        "contact": Contact.objects.all().first(),
+        "contact_main": ContactMain.objects.all().first(),
+        "contact_info": ContactInfo.objects.all(),
+        "testimonials": Testimonials.objects.first(),
+        "testimonials_blocks": TestimonialsBlocks.objects.all(),
+        "footer_text": FooterText.objects.all().first(),
+        "footer_names": FooterNames.objects.all(),
+        "about_us": AboutUs.objects.all().first(),
+        "hosting_plans": HostingPlans.objects.all(),
+        "useful_links": UsefulLinks.objects.all(),
+        "more_information": MoreInformation.objects.all()
+    }
+    return render(request, "contact.html", context)
+             
+
+def services(request):
+    context = {
+        "services": Services.objects.all().first(),
+        "services_main": ServicesMain.objects.all().first(),
+        "services_blocks": ServicesBlocks.objects.all(),
+        "testimonials": Testimonials.objects.first(),
+        "testimonials_blocks": TestimonialsBlocks.objects.all(),
+        "footer_text": FooterText.objects.all().first(),
+        "footer_names": FooterNames.objects.all(),
+        "about_us": AboutUs.objects.all().first(),
+        "hosting_plans": HostingPlans.objects.all(),
+        "useful_links": UsefulLinks.objects.all(),
+        "more_information": MoreInformation.objects.all()
+    }
+    return render(request, "services.html", context)
+        

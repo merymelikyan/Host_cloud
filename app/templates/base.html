@@ -1,496 +1,232 @@
 {% load static %} 
 
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-  <head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="TemplateMo">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-    <title>Host Cloud - Free HTML5 Bootstrap Template</title>
+      <title>Host Cloud - Free HTML5 Bootstrap Template</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+      <!-- Bootstrap core CSS -->
+      <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static "css/fontawesome.css" %}">
-    <link rel="stylesheet" href="{% static "css/templatemo-host-cloud.css" %}">
-    <link rel="stylesheet" href="{% static "css/owl.css" %}">
-<!--
+      <!-- Additional CSS Files -->
+      <link rel="stylesheet" href="{% static "css/fontawesome.css" %}">
+      <link rel="stylesheet" href="{% static "css/templatemo-host-cloud.css" %}">
+      <link rel="stylesheet" href="{% static "css/owl.css" %}">
+  <!--
 
-Host Cloud Template
+  Host Cloud Template
 
-https://templatemo.com/tm-541-host-cloud
+  https://templatemo.com/tm-541-host-cloud
 
--->
-  </head>
+  -->
+    </head>
 
-  <body>
+    <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
+      <!-- ***** Preloader Start ***** -->
+      <div id="preloader">
+          <div class="jumper">
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+      </div>  
+      <!-- ***** Preloader End ***** -->
 
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
+      <!-- Header -->
+      <header class="">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}"><h2>Host <em>Cloud</em></h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'index' %}">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'services' %}">Our Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="functional-buttons">
+              <ul>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Sign Up</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      
+      {% block home_template %} {% endblock %}
+      {% block about_template %}{% endblock %}
+      {% block contact_template %}{% endblock %}
+      {% block services_template %}{% endblock %}
+    
+
+      <!-- Testimonials Starts Here -->
+      <div class="testimonials-section">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Host <em>Cloud</em></h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html">Our Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div class="functional-buttons">
-            <ul>
-              <li><a href="#">Log in</a></li>
-              <li><a href="#">Sign Up</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
-            <div class="header-text caption">
-              <h2>Search your domain</h2>
-              <div id="search-section">
-              	<form id="suggestion_form" name="gs" method="get" action="#">
-                <div class="searchText">
-                  
-                  <input type="text" name="q" class="searchText" placeholder="Enter your domain here..." autocomplete="on">
-                  <ul>
-                    <li><label><input type="checkbox" name="ext_com" value="1"><span>.com <em>($10/yr)</em></span></label></li>
-                    <li><label><input type="checkbox" name="ext_net" value="1"><span>.net <em>($12/yr)</em></span></label></li>
-                    <li><label><input type="checkbox" name="ext_org" value="1"><span>.org <em>($8/yr)</em></span></label></li>
-                    <li><label><input type="checkbox" name="ext_in" value="1"><span>.in <em>($6/yr)</em></span></label></li>
-                  </ul>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading">
+                <span>{{testimonials.tag}}</span>
+                <h2>{{testimonials.title}}</h2>
+              </div>
+            </div>
+            <div class="col-md-10 offset-md-1">
+              <div class="owl-testimonials owl-carousel">
+                {% for blocks in testimonials_blocks %}
+                  <div class="testimonial-item">
+                    <div class="icon">
+                      <i class="{{blocks.icon_class}}"></i>
+                    </div>
+                    <p>{{blocks.description}}</p>
+                    <h4>{{blocks.name}}</h4>
+                    <span>{{blocks.position}}</span>
+                  </div>
+                {% endfor %}  
+                {% comment %} <div class="testimonial-item">
+                  <div class="icon">
+                    <i class="fa fa-quote-right"></i>
+                  </div>
+                  <p>"Quisque lacinia sed velit et maximus. Quisque dictum, lacus a malesuada finibus, arcu magna luctus risus, eu accumsan risus elit vitae lacus."</p>
+                  <h4>Vinny Smart</h4>
+                  <span>Digital Marketer</span>
                 </div>
-                    <input type="submit" name="results" class="main-button" value="Search Now">
-                 </form>
-               <div class="advSearch_chkbox">
-               </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Banner Ends Here -->
-
-    <!-- Trusted Starts Here -->
-    <div class="trusted-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="trusted-section-heading">
-              <h4>{{trusted_main.title}}</h4>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="owl-trusted owl-carousel">
-              {% for t in trusted %}
-                <div class="trusted-item">
-                  <img src="{{t.image.url}}" alt="{{t.title}}">
-                </div>
-              {% endfor %}  
-
-              {% comment %} <div class="trusted-item">
-                <img src="{{{% static "images/trusted-01.png" %}}}" alt="trusted 1">
-              </div>
-              <div class="trusted-item">
-                <img src="{% static "images/trusted-01.png" %}" alt="trusted 2">
-              </div>
-              <div class="trusted-item">
-                <img src="{% static "images/trusted-01.png" %}" alt="trusted 3">
-              </div>
-              <div class="trusted-item">
-                <img src="{% static "images/trusted-01.png" %}" alt="trusted 4">
-              </div>
-              <div class="trusted-item">
-                <img src="{% static "images/trusted-01.png" %}" alt="trusted 5">
-              </div>
-              <div class="trusted-item">
-                <img src="{% static "images/trusted-01.png" %}" alt="trusted 6">
-              </div>
-              <div class="trusted-item">
-                <img src="{% static "images/trusted-01.png" %}" alt="trusted 7">
-              </div> {% endcomment %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Trusted Ends Here -->
-
-
-    <!-- Services Starts Here -->
-    <div class="services-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <span>{{hosting_main.tag}}</span>
-              <h2>{{hosting_main.title}}</h2>
-              <p>{{hosting_main.description}}</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="service-item">
-              <i class="fa fa-database"></i>
-              <h4>{{hosting_services.0.title}}</h4>
-              <p>{{hosting_services.0.description}}</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="service-item">
-              <i class="fa fa-database"></i>
-              <h4>{{hosting_service1.title}}</h4>
-              <p>{{hosting_service1.description1}}<a rel="nofollow" href="{{hosting_service1.link_url}}" target="_parent">{{hosting_service1.description2}}</a> {{hosting_service1.description3}}</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="service-item">
-              <i class="fa fa-database"></i>
-              <h4>{{hosting_services.1.title}}</h4>
-              <p>{{hosting_services.1.description}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Services Ends Here -->
-
-
-    <!-- Pricing Starts Here -->
-    <div class="pricing-section">
-      <div class="background-image-pricing">
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
-            <div class="section-heading">
-              <h2>{{cloud_main.title}}</h2>
-              <p>{{cloud_main.description}}</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="pricing-item">
-              <h4>{{cloud_plans.0.title}}</h4>
-              <div class="price">
-                <h6>{{cloud_plans.0.price}}</h6>
-                <span>{{cloud_plans.0.duration}}</span>
-              </div>
-              <p>{{cloud_plans.0.description}}</p>
-              <div class="dev"></div>
-              <ul>
-                <li><i class="fa fa-check"></i>{{cloud_plans.0.space}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.0.transfer}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.0.panel}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.0.support}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.0.type}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.0.upgrading}}</li>
-              </ul>
-              <a href="#" class="main-button">{{cloud_plans.0.button_name}}</a>
-            </div>
-          </div>
-          
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="pricing-item">
-              <h4>{{cloud_plans.1.title}}</h4>
-              <div class="price price-gradient">
-                <h6>{{cloud_plans.1.price}}</h6>
-                <span>{{cloud_plans.1.duration}}</span>
-              </div>
-              <p>{{cloud_main.description}}</p>
-              <div class="dev"></div>
-              <ul>
-                <li><i class="fa fa-check"></i>{{cloud_plans.1.space}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.1.transfer}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.1.panel}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.1.support}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.1.type}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.1.upgrading}}</li>
-              </ul>
-              <a href="#" class="gradient-button">{{cloud_plans.1.button_name}}</a>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="pricing-item">
-              <h4>{{cloud_plans.2.title}}</h4>
-              <div class="price">
-                <h6>{{cloud_plans.2.price}}</h6>
-                <span>{{cloud_plans.2.duration}}</span>
-              </div>
-              <p>{{cloud_main.description}}</p>
-              <div class="dev"></div>
-              <ul>
-                <li><i class="fa fa-check"></i>{{cloud_plans.2.space}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.2.transfer}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.2.panel}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.2.support}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.2.type}}</li>
-                <li><i class="fa fa-check"></i>{{cloud_plans.2.upgrading}}</li>
-              </ul>
-              <a href="#" class="main-button">{{cloud_plans.2.button_name}}</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- Pricing Ends Here -->
-
-
-    <!-- Features Starts Here -->
-    <div class="features-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <span>{{features_main.tag}}</span>
-              <h2>{{features_main.title}}</h2>
-            </div>
-          </div>
-
-          {% for blocks in features_blocks %}
-            <div class="col-md-6">
-              <div class="feature-item">
-                <div class="icon">
-                  <img src="{{blocks.image.url}}" alt="">
-                </div>
-                <h4>{{blocks.title}}</h4>
-                <p>{{blocks.description}}</p>
-              </div>
-            </div>
-          {% endfor %}  
-          {% comment %} <div class="col-md-6">
-            <div class="feature-item">
-              <div class="icon">
-                <img src="{{% static "images/feature-01.png" %}}" alt="">
-              </div>
-              <h4>99.9% Uptime Guaranteed</h4>
-              <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="feature-item">
-              <div class="icon">
-                <img src="{{% static "images/feature-01.png" %}}" alt="">
-              </div>
-              <h4>Top Reliability</h4>
-              <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="feature-item">
-              <div class="icon">
-                <img src="{{% static "images/feature-01.png" %}}" alt="">
-              </div>
-              <h4>High Security</h4>
-              <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="feature-item">
-              <div class="icon">
-                <img src="{{% static "images/feature-01.png" %}}" alt="">
-              </div>
-              <h4>Quality Hardwares</h4>
-              <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="feature-item">
-              <div class="icon">
-                <img src="{{% static "images/feature-01.png" %}}" alt="">
-              </div>
-              <h4>Network Solutions</h4>
-              <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry scenester.</p>
-            </div>
-          </div> {% endcomment %}
-
-        </div>
-      </div>
-    </div>
-    <!-- Features Ends Here -->
-
-
-    <!-- Testimonials Starts Here -->
-    <div class="testimonials-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <span>{{testimonials.tag}}</span>
-              <h2>{{testimonials.title}}</h2>
-            </div>
-          </div>
-          <div class="col-md-10 offset-md-1">
-            <div class="owl-testimonials owl-carousel">
-              {% for blocks in testimonials_blocks %}
                 <div class="testimonial-item">
                   <div class="icon">
-                    <i class="{{blocks.icon_class}}"></i>
+                    <i class="fa fa-quote-right"></i>
                   </div>
-                  <p>{{blocks.description}}</p>
-                  <h4>{{blocks.name}}</h4>
-                  <span>{{blocks.position}}</span>
-                </div>
-              {% endfor %}  
-              {% comment %} <div class="testimonial-item">
-                <div class="icon">
-                  <i class="fa fa-quote-right"></i>
-                </div>
-                <p>"Quisque lacinia sed velit et maximus. Quisque dictum, lacus a malesuada finibus, arcu magna luctus risus, eu accumsan risus elit vitae lacus."</p>
-                <h4>Vinny Smart</h4>
-                <span>Digital Marketer</span>
+                  <p>"Vestibulum mauris ipsum, tempor tincidunt justo sit amet, bibendum tincidunt dui. Aenean molestie, odio quis viverra ultricies, leo tellus lacinia neque, sit amet maximus tortor nunc aliquet felis."</p>
+                  <h4>Trevor Liam</h4>
+                  <span>Technology Chef</span>
+                </div> {% endcomment %}
+              
               </div>
-              <div class="testimonial-item">
-                <div class="icon">
-                  <i class="fa fa-quote-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonials Ends Here -->
+
+      <!-- Footer Starts Here -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="footer-item">
+                <div class="footer-heading">
+                  <h2>{{about_us.title}}</h2>
                 </div>
-                <p>"Vestibulum mauris ipsum, tempor tincidunt justo sit amet, bibendum tincidunt dui. Aenean molestie, odio quis viverra ultricies, leo tellus lacinia neque, sit amet maximus tortor nunc aliquet felis."</p>
-                <h4>Trevor Liam</h4>
-                <span>Technology Chef</span>
-              </div> {% endcomment %}
+                <p>{{about_us.description}}</p>
+              </div>
+            </div>
             
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="footer-item">
+                <div class="footer-heading">
+                  <h2>{{footer_names.0.title}}</h2>
+                </div>
+                <ul class="footer-list">
+                  {% for name in hosting_plans %}
+                      <li> <a href="{{name.link_url}}">{{name.link_name}}</a></li>
+                  {% endfor %}
+                  {% comment %} <li><a href="#">Basic Cloud 5X</a></li>
+                  <li><a href="#">Cloud VPS 10X</a></li>
+                  <li><a href="#">Advanced Cloud</a></li>
+                  <li><a href="#">Custom Designs</a></li>
+                  <li><a href="#">Special Solutions</a></li> {% endcomment %}
+                </ul>
+              </div>
+            </div>
+            
+            
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="footer-item">
+                <div class="footer-heading">
+                  <h2>{{footer_names.2.title}}</h2>
+                </div>
+                <ul class="footer-list">
+                  {% for name in useful_links %}
+                    <li><a href="{{name.link_url}}">{{name.link_name}}</a></li>
+                  {% endfor %}
+                  {% comment %} <li><a href="#">Cloud Hosting Platform</a></li>
+                  <li><a href="#">Light Speed Zone</a></li>
+                  <li><a href="#">Content Delivery Network</a></li>
+                  <li><a href="#">Customer Support</a></li>
+                  <li><a href="#">Latest News</a></li> {% endcomment %}
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="footer-item">
+                <div class="footer-heading">
+                  <h2>{{footer_names.2.title}}</h2>
+                </div>
+                <ul class="footer-list">
+                  {% for name in more_information %}
+                    <li>{{name.title}} <a href="{{name.link_url}}">{{name.link_name}}</a></li>
+                  {% endfor %}
+                    {% comment %} <li>Phone: <a href="#">010-020-0560</a></li>
+                  <li>Email: <a href="#">mail@company.com</a></li>
+                  <li>Support: <a href="#">support@company.com</a></li>
+                  <li>Website: <a href="#">www.company.com</a></li> {% endcomment %}
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="sub-footer">
+                <p>{{footer_text.text1}}
+          {{footer_text.text2}} <a rel="nofollow" href="{{footer_text.url}}">{{footer_text.title}}</a></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- Testimonials Ends Here -->
+      </footer>
+      <!-- Footer Ends Here -->
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+      <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+
+      <!-- Additional Scripts -->
+      <script src="{% static "js/custom.js" %}"></script>
+      <script src="{% static "js/owl.js" %}"></script>
+      <script src="{% static "js/accordions.js" %}"></script>
 
 
-    <!-- Footer Starts Here -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>{{about_us.title}}</h2>
-              </div>
-              <p>{{about_us.description}}</p>
-            </div>
-          </div>
-          
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>{{footer_names.0.title}}</h2>
-              </div>
-              <ul class="footer-list">
-                {% for name in hosting_plans %}
-                    <li> <a href="{{name.link_url}}">{{name.link_name}}</a></li>
-                {% endfor %}
-                {% comment %} <li><a href="#">Basic Cloud 5X</a></li>
-                <li><a href="#">Cloud VPS 10X</a></li>
-                <li><a href="#">Advanced Cloud</a></li>
-                <li><a href="#">Custom Designs</a></li>
-                <li><a href="#">Special Solutions</a></li> {% endcomment %}
-              </ul>
-            </div>
-          </div>
-          
-          
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>{{footer_names.2.title}}</h2>
-              </div>
-              <ul class="footer-list">
-                {% for name in useful_links %}
-                   <li><a href="{{name.link_url}}">{{name.link_name}}</a></li>
-                {% endfor %}
-                {% comment %} <li><a href="#">Cloud Hosting Platform</a></li>
-                <li><a href="#">Light Speed Zone</a></li>
-                <li><a href="#">Content Delivery Network</a></li>
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Latest News</a></li> {% endcomment %}
-              </ul>
-            </div>
-          </div>
-          
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="footer-item">
-              <div class="footer-heading">
-                <h2>{{footer_names.2.title}}</h2>
-              </div>
-              <ul class="footer-list">
-                {% for name in more_information %}
-                  <li>{{name.title}} <a href="{{name.link_url}}">{{name.link_name}}</a></li>
-                {% endfor %}
-                  {% comment %} <li>Phone: <a href="#">010-020-0560</a></li>
-                <li>Email: <a href="#">mail@company.com</a></li>
-                <li>Support: <a href="#">support@company.com</a></li>
-                <li>Website: <a href="#">www.company.com</a></li> {% endcomment %}
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="sub-footer">
-              <p>{{footer_text.text1}}
-				{{footer_text.text2}} <a rel="nofollow" href="{{footer_text.url}}">{{footer_text.title}}</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer Ends Here -->
+      <script language = "text/Javascript"> 
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t){                   //declaring the array outside of the
+        if(! cleared[t.id]){                      // function makes it static and global
+            cleared[t.id] = 1;  // you could use true and false, but that's more typing
+            t.value='';         // with more chance of typos
+            t.style.color='#fff';
+            }
+        }
+      </script>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
-    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
-
-    <!-- Additional Scripts -->
-    <script src="{% static "js/custom.js" %}"></script>
-    <script src="{% static "js/owl.js" %}"></script>
-    <script src="{% static "js/accordions.js" %}"></script>
-
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-
-  </body>
-</html>
+    </body>
+  </html>

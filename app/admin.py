@@ -19,7 +19,19 @@ from .models import (
     FooterNames,
     HostingPlans,
     UsefulLinks,
-    MoreInformation
+    MoreInformation,
+    About,
+    Background,
+    WorkTabs,
+    OurWork,
+    OurTeam,
+    Members,
+    Contact,
+    ContactMain,
+    ContactInfo,
+    Services,
+    ServicesMain,
+    ServicesBlocks
     
  
 ) 
@@ -42,6 +54,17 @@ admin.site.register(FooterNames)
 admin.site.register(HostingPlans)
 admin.site.register(UsefulLinks)
 admin.site.register(MoreInformation)
-
+admin.site.register(About)
+admin.site.register(Background)
+admin.site.register(WorkTabs)
+admin.site.register(OurWork)
+admin.site.register(OurTeam)
+admin.site.register(Members)
+admin.site.register(Contact)
+admin.site.register(ContactMain)
+admin.site.register(ContactInfo)
+admin.site.register(Services)
+admin.site.register(ServicesMain)
+admin.site.register(ServicesBlocks)
 
 
