@@ -207,7 +207,6 @@ class FooterNames(models.Model):
 
 
 class HostingPlans(models.Model):
-    link_url = models.CharField(max_length=200, blank=True, null=True) 
     link_name = models.CharField(max_length=255, blank=True, null=True)
   
 
@@ -221,7 +220,6 @@ class HostingPlans(models.Model):
 
 
 class UsefulLinks(models.Model):
-    link_url = models.CharField(max_length=200, blank=True, null=True) 
     link_name = models.CharField(max_length=255, blank=True, null=True)
   
 
@@ -236,7 +234,6 @@ class UsefulLinks(models.Model):
 
 class MoreInformation(models.Model):
     title = models.CharField(max_length=255)
-    link_url = models.CharField(max_length=200, blank=True, null=True) 
     link_name = models.CharField(max_length=255, blank=True, null=True)
   
 
@@ -276,7 +273,6 @@ class Background(models.Model):
 
         
 class WorkTabs(models.Model):
-    link_url = models.CharField(max_length=200, blank=True, null=True) 
     link_name = models.CharField(max_length=255, blank=True, null=True)
 
 

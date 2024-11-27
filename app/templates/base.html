@@ -106,22 +106,7 @@
                     <span>{{blocks.position}}</span>
                   </div>
                 {% endfor %}  
-                {% comment %} <div class="testimonial-item">
-                  <div class="icon">
-                    <i class="fa fa-quote-right"></i>
-                  </div>
-                  <p>"Quisque lacinia sed velit et maximus. Quisque dictum, lacus a malesuada finibus, arcu magna luctus risus, eu accumsan risus elit vitae lacus."</p>
-                  <h4>Vinny Smart</h4>
-                  <span>Digital Marketer</span>
-                </div>
-                <div class="testimonial-item">
-                  <div class="icon">
-                    <i class="fa fa-quote-right"></i>
-                  </div>
-                  <p>"Vestibulum mauris ipsum, tempor tincidunt justo sit amet, bibendum tincidunt dui. Aenean molestie, odio quis viverra ultricies, leo tellus lacinia neque, sit amet maximus tortor nunc aliquet felis."</p>
-                  <h4>Trevor Liam</h4>
-                  <span>Technology Chef</span>
-                </div> {% endcomment %}
+
               
               </div>
             </div>
@@ -150,13 +135,9 @@
                 </div>
                 <ul class="footer-list">
                   {% for name in hosting_plans %}
-                      <li> <a href="{{name.link_url}}">{{name.link_name}}</a></li>
+                      <li> <a href="#">{{name.link_name}}</a></li>
                   {% endfor %}
-                  {% comment %} <li><a href="#">Basic Cloud 5X</a></li>
-                  <li><a href="#">Cloud VPS 10X</a></li>
-                  <li><a href="#">Advanced Cloud</a></li>
-                  <li><a href="#">Custom Designs</a></li>
-                  <li><a href="#">Special Solutions</a></li> {% endcomment %}
+                  
                 </ul>
               </div>
             </div>
@@ -169,13 +150,9 @@
                 </div>
                 <ul class="footer-list">
                   {% for name in useful_links %}
-                    <li><a href="{{name.link_url}}">{{name.link_name}}</a></li>
+                    <li><a href="#">{{name.link_name}}</a></li>
                   {% endfor %}
-                  {% comment %} <li><a href="#">Cloud Hosting Platform</a></li>
-                  <li><a href="#">Light Speed Zone</a></li>
-                  <li><a href="#">Content Delivery Network</a></li>
-                  <li><a href="#">Customer Support</a></li>
-                  <li><a href="#">Latest News</a></li> {% endcomment %}
+                 
                 </ul>
               </div>
             </div>
@@ -187,7 +164,7 @@
                 </div>
                 <ul class="footer-list">
                   {% for name in more_information %}
-                    <li>{{name.title}} <a href="{{name.link_url}}">{{name.link_name}}</a></li>
+                    <li>{{name.title}} <a href="#">{{name.link_name}}</a></li>
                   {% endfor %}
                     {% comment %} <li>Phone: <a href="#">010-020-0560</a></li>
                   <li>Email: <a href="#">mail@company.com</a></li>

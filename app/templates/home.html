@@ -52,27 +52,7 @@
                   </div>
                 {% endfor %}  
   
-                {% comment %} <div class="trusted-item">
-                  <img src="{{{% static "images/trusted-01.png" %}}}" alt="trusted 1">
-                </div>
-                <div class="trusted-item">
-                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 2">
-                </div>
-                <div class="trusted-item">
-                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 3">
-                </div>
-                <div class="trusted-item">
-                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 4">
-                </div>
-                <div class="trusted-item">
-                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 5">
-                </div>
-                <div class="trusted-item">
-                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 6">
-                </div>
-                <div class="trusted-item">
-                  <img src="{% static "images/trusted-01.png" %}" alt="trusted 7">
-                </div> {% endcomment %}
+         
               </div>
             </div>
           </div>
@@ -193,6 +173,29 @@
               </div>
             </div>
   
+            {% comment %} {% for plans in cloud_plans %}
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="pricing-item">
+                  <h4>{{plans.title}}</h4>
+                  <div class="price">
+                    <h6>{{plans.price}}</h6>
+                    <span>{{plans.duration}}</span>
+                  </div>
+                  <p>{{plans.description}}</p>
+                  <div class="dev"></div>
+                  <ul>
+                    <li><i class="fa fa-check"></i>{{plans.space}}</li>
+                    <li><i class="fa fa-check"></i>{{plans.transfer}}</li>
+                    <li><i class="fa fa-check"></i>{{plans.panel}}</li>
+                    <li><i class="fa fa-check"></i>{{plans.support}}</li>
+                    <li><i class="fa fa-check"></i>{{plans.type}}</li>
+                    <li><i class="fa fa-check"></i>{{plans.upgrading}}</li>
+                  </ul>
+                  <a href="#" class="main-button">{{plans.button_name}}</a>
+                </div>
+              </div>
+            {% endfor %}   {% endcomment %}
+
           </div>
         </div>
       </div>

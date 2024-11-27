@@ -92,3 +92,19 @@ $(window).scroll(function () {
         $("header").removeClass("background-header");
     }
 });
+
+$("#contact").on("submit", (e) => {
+	e.preventDefault();
+	const data = {
+		'name': $('input[name=name]').val(),
+		'email': $('input[name=email]').val(),
+    'subject': $('input[name=subject]').val(),
+		'content': $('textarea[name=content]').val(),
+		'csrfmiddlewaretoken': '{{ csrf_token }}'
+	};
+	$.post("http://127.0.0.1:8000/messages/receive_message/", data, () => {
+		console.log("all is okay");
+	});
+
+	e.target.reset();
+});
